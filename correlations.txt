@@ -1,0 +1,187 @@
+                              bonus  deferral_payments  deferred_income  \
+bonus                      1.000000           0.174695        -0.331749   
+deferral_payments          0.174695           1.000000        -0.543416   
+deferred_income           -0.331749          -0.543416         1.000000   
+director_fees             -0.176013          -0.094662         0.075776   
+exercised_stock_options    0.416768           0.117976        -0.268771   
+expenses                   0.246103          -0.020135        -0.041638   
+from_messages              0.174601           0.029141        -0.014842   
+from_poi_to_this_person    0.641137           0.217235        -0.195217   
+from_this_person_to_poi    0.448719           0.002374        -0.004992   
+loan_advances              0.432387           0.014682        -0.025368   
+long_term_incentive        0.497976           0.119952        -0.296561   
+other                      0.383661           0.369038        -0.265704   
+poi                        0.359381          -0.039067        -0.274762   
+restricted_stock           0.423974           0.088614        -0.126487   
+restricted_stock_deferred -0.043203          -0.030387         0.047843   
+salary                     0.649638           0.243606        -0.330234   
+shared_receipt_with_poi    0.665151           0.210610        -0.236775   
+to_messages                0.520081           0.124692        -0.122060   
+total_payments             0.559795           0.141531        -0.103969   
+total_stock_value          0.461615           0.119082        -0.245018   
+
+                           director_fees  exercised_stock_options  expenses  \
+bonus                          -0.176013                 0.416768  0.246103   
+deferral_payments              -0.094662                 0.117976 -0.020135   
+deferred_income                 0.075776                -0.268771 -0.041638   
+director_fees                   1.000000                -0.116130 -0.137513   
+exercised_stock_options        -0.116130                 1.000000  0.122628   
+expenses                       -0.137513                 0.122628  1.000000   
+from_messages                  -0.079788                -0.023322  0.155852   
+from_poi_to_this_person        -0.167539                 0.125965  0.148235   
+from_this_person_to_poi        -0.098722                 0.002670  0.134639   
+loan_advances                  -0.027542                 0.568086  0.121677   
+long_term_incentive            -0.157443                 0.399428  0.097898   
+other                          -0.079899                 0.550851  0.138877   
+poi                            -0.120936                 0.387553  0.205077   
+restricted_stock               -0.177185                 0.587479  0.181428   
+restricted_stock_deferred       0.346193                -0.002181 -0.067539   
+salary                         -0.302188                 0.449913  0.361433   
+shared_receipt_with_poi        -0.196130                 0.126581  0.287915   
+to_messages                    -0.169389                 0.085918  0.243541   
+total_payments                 -0.025916                 0.598971  0.151734   
+total_stock_value              -0.146217                 0.963921  0.153640   
+
+                           from_messages  from_poi_to_this_person  \
+bonus                           0.174601                 0.641137   
+deferral_payments               0.029141                 0.217235   
+deferred_income                -0.014842                -0.195217   
+director_fees                  -0.079788                -0.167539   
+exercised_stock_options        -0.023322                 0.125965   
+expenses                        0.155852                 0.148235   
+from_messages                   1.000000                 0.253745   
+from_poi_to_this_person         0.253745                 1.000000   
+from_this_person_to_poi         0.609586                 0.497979   
+loan_advances                  -0.019518                 0.100622   
+long_term_incentive             0.055461                 0.267400   
+other                          -0.054316                 0.160612   
+poi                            -0.033982                 0.190460   
+restricted_stock                0.022896                 0.125990   
+restricted_stock_deferred      -0.022396                -0.046653   
+salary                          0.144043                 0.407349   
+shared_receipt_with_poi         0.301490                 0.733038   
+to_messages                     0.508196                 0.618484   
+total_payments                  0.009093                 0.215987   
+total_stock_value              -0.011269                 0.138007   
+
+                           from_this_person_to_poi  loan_advances  \
+bonus                                     0.448719       0.432387   
+deferral_payments                         0.002374       0.014682   
+deferred_income                          -0.004992      -0.025368   
+director_fees                            -0.098722      -0.027542   
+exercised_stock_options                   0.002670       0.568086   
+expenses                                  0.134639       0.121677   
+from_messages                             0.609586      -0.019518   
+from_poi_to_this_person                   0.497979       0.100622   
+from_this_person_to_poi                   1.000000      -0.009679   
+loan_advances                            -0.009679       1.000000   
+long_term_incentive                       0.156910       0.402060   
+other                                    -0.049245       0.759362   
+poi                                       0.129619       0.220295   
+restricted_stock                          0.059796       0.581289   
+restricted_stock_deferred                -0.022268      -0.004871   
+salary                                    0.206959       0.387788   
+shared_receipt_with_poi                   0.524710       0.137421   
+to_messages                               0.605306       0.115600   
+total_payments                            0.062209       0.964214   
+total_stock_value                         0.022071       0.630061   
+
+                           long_term_incentive     other       poi  \
+bonus                                 0.497976  0.383661  0.359381   
+deferral_payments                     0.119952  0.369038 -0.039067   
+deferred_income                      -0.296561 -0.265704 -0.274762   
+director_fees                        -0.157443 -0.079899 -0.120936   
+exercised_stock_options               0.399428  0.550851  0.387553   
+expenses                              0.097898  0.138877  0.205077   
+from_messages                         0.055461 -0.054316 -0.033982   
+from_poi_to_this_person               0.267400  0.160612  0.190460   
+from_this_person_to_poi               0.156910 -0.049245  0.129619   
+loan_advances                         0.402060  0.759362  0.220295   
+long_term_incentive                   1.000000  0.534931  0.257361   
+other                                 0.534931  1.000000  0.170395   
+poi                                   0.257361  0.170395  1.000000   
+restricted_stock                      0.343119  0.635038  0.248509   
+restricted_stock_deferred            -0.038816 -0.007261 -0.021388   
+salary                                0.560365  0.544682  0.340120   
+shared_receipt_with_poi               0.280011  0.181186  0.240876   
+to_messages                           0.192925  0.106603  0.108730   
+total_payments                        0.520634  0.830184  0.242521   
+total_stock_value                     0.421741  0.634659  0.383382   
+
+                           restricted_stock  restricted_stock_deferred  \
+bonus                              0.423974                  -0.043203   
+deferral_payments                  0.088614                  -0.030387   
+deferred_income                   -0.126487                   0.047843   
+director_fees                     -0.177185                   0.346193   
+exercised_stock_options            0.587479                  -0.002181   
+expenses                           0.181428                  -0.067539   
+from_messages                      0.022896                  -0.022396   
+from_poi_to_this_person            0.125990                  -0.046653   
+from_this_person_to_poi            0.059796                  -0.022268   
+loan_advances                      0.581289                  -0.004871   
+long_term_incentive                0.343119                  -0.038816   
+other                              0.635038                  -0.007261   
+poi                                0.248509                  -0.021388   
+restricted_stock                   1.000000                  -0.145452   
+restricted_stock_deferred         -0.145452                   1.000000   
+salary                             0.538745                  -0.088530   
+shared_receipt_with_poi            0.181572                  -0.020876   
+to_messages                        0.160126                  -0.027645   
+total_payments                     0.603826                   0.127653   
+total_stock_value                  0.780558                  -0.045049   
+
+                             salary  shared_receipt_with_poi  to_messages  \
+bonus                      0.649638                 0.665151     0.520081   
+deferral_payments          0.243606                 0.210610     0.124692   
+deferred_income           -0.330234                -0.236775    -0.122060   
+director_fees             -0.302188                -0.196130    -0.169389   
+exercised_stock_options    0.449913                 0.126581     0.085918   
+expenses                   0.361433                 0.287915     0.243541   
+from_messages              0.144043                 0.301490     0.508196   
+from_poi_to_this_person    0.407349                 0.733038     0.618484   
+from_this_person_to_poi    0.206959                 0.524710     0.605306   
+loan_advances              0.387788                 0.137421     0.115600   
+long_term_incentive        0.560365                 0.280011     0.192925   
+other                      0.544682                 0.181186     0.106603   
+poi                        0.340120                 0.240876     0.108730   
+restricted_stock           0.538745                 0.181572     0.160126   
+restricted_stock_deferred -0.088530                -0.020876    -0.027645   
+salary                     1.000000                 0.511913     0.396559   
+shared_receipt_with_poi    0.511913                 1.000000     0.881534   
+to_messages                0.396559                 0.881534     1.000000   
+total_payments             0.511293                 0.254308     0.197709   
+total_stock_value          0.522061                 0.156803     0.118573   
+
+                           total_payments  total_stock_value  
+bonus                            0.559795           0.461615  
+deferral_payments                0.141531           0.119082  
+deferred_income                 -0.103969          -0.245018  
+director_fees                   -0.025916          -0.146217  
+exercised_stock_options          0.598971           0.963921  
+expenses                         0.151734           0.153640  
+from_messages                    0.009093          -0.011269  
+from_poi_to_this_person          0.215987           0.138007  
+from_this_person_to_poi          0.062209           0.022071  
+loan_advances                    0.964214           0.630061  
+long_term_incentive              0.520634           0.421741  
+other                            0.830184           0.634659  
+poi                              0.242521           0.383382  
+restricted_stock                 0.603826           0.780558  
+restricted_stock_deferred        0.127653          -0.045049  
+salary                           0.511293           0.522061  
+shared_receipt_with_poi          0.254308           0.156803  
+to_messages                      0.197709           0.118573  
+total_payments                   1.000000           0.661677  
+total_stock_value                0.661677           1.000000  
+['bonus', 'deferral_payments', 'deferred_income', 'director_fees', 'exercised_stock_options', 'expenses', 'from_messages', 'from_poi_to_this_person', 'from_this_person_to_poi', 'loan_advances', 'long_term_incentive', 'other', 'poi', 'restricted_stock', 'restricted_stock_deferred', 'salary', 'shared_receipt_with_poi', 'to_messages', 'total_payments', 'total_stock_value']
+('bonus', ':', 30.728774633399681)
+('deferred_income', ':', 8.7922038527047679)
+('exercised_stock_options', ':', 9.6800414303809852)
+('loan_advances', ':', 7.0379327981934594)
+('long_term_incentive', ':', 7.5551197773202965)
+('restricted_stock', ':', 8.0583063122805179)
+('salary', ':', 15.858730905995115)
+('shared_receipt_with_poi', ':', 10.722570813682712)
+('total_payments', ':', 8.9591366476908547)
+('total_stock_value', ':', 10.63385204838254)
+{}

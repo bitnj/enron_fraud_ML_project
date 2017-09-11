@@ -1,0 +1,179 @@
+Number of records: 144
+
+Number of features: 21
+
+Number of POIs: 18
+
+POI List:
+ HANNON KEVIN P          True
+COLWELL WESLEY          True
+RIEKER PAULA H          True
+KOPPER MICHAEL J        True
+SHELBY REX              True
+DELAINEY DAVID W        True
+LAY KENNETH L           True
+BOWEN JR RAYMOND M      True
+BELDEN TIMOTHY N        True
+FASTOW ANDREW S         True
+CALGER CHRISTOPHER F    True
+RICE KENNETH D          True
+SKILLING JEFFREY K      True
+YEAGER F SCOTT          True
+HIRKO JOSEPH            True
+KOENIG MARK E           True
+CAUSEY RICHARD A        True
+GLISAN JR BEN F         True
+Name: poi, dtype: bool
+
+Pct NaN:
+ bonus                        0.437500
+deferral_payments            0.736111
+deferred_income              0.666667
+director_fees                0.888889
+email_address                0.229167
+exercised_stock_options      0.298611
+expenses                     0.347222
+from_messages                0.402778
+from_poi_to_this_person      0.402778
+from_this_person_to_poi      0.402778
+loan_advances                0.979167
+long_term_incentive          0.548611
+other                        0.368056
+poi                          0.000000
+restricted_stock             0.243056
+restricted_stock_deferred    0.881944
+salary                       0.347222
+shared_receipt_with_poi      0.402778
+to_messages                  0.402778
+total_payments               0.145833
+total_stock_value            0.131944
+dtype: float64
+
+Pct emails from POI:
+ METTS MARK              0.047088
+BAXTER JOHN C                NaN
+ELLIOTT STEVEN               NaN
+CORDES WILLIAM R        0.013089
+HANNON KEVIN P          0.030622
+MORDAUNT KRISTINA M          NaN
+MEYER ROCKFORD G        0.000000
+MCMAHON JEFFREY         0.024628
+HORTON STANLEY C        0.018723
+PIPER GREGORY F         0.049273
+HUMPHREY GENE E         0.078125
+UMANOFF ADAM S          0.108108
+BLACHMAN JEREMY M       0.010101
+SUNDE MARTIN            0.013978
+GIBBS DANA R            0.000000
+LOWRY CHARLES P              NaN
+COLWELL WESLEY          0.136519
+MULLER MARK S           0.088235
+JACKSON CHARLENE R      0.096899
+WESTFAHL RICHARD K           NaN
+WALTERS GARETH W             NaN
+WALLS JR ROBERT H       0.025335
+KITCHEN LOUISE          0.030223
+CHAN RONNIE                  NaN
+BELFER ROBERT                NaN
+SHANKMAN JEFFREY A      0.029183
+WODRASKA JOHN                NaN
+BERGSIEKER RICHARD P    0.010444
+URQUHART JOHN A              NaN
+BIBI PHILIPPE A         0.014312
+                          ...   
+REYNOLDS LAWRENCE            NaN
+DIMICHELE RICHARD G          NaN
+BHATNAGAR SANJAY        0.000000
+CARTER REBECCA C        0.092949
+BUCHANAN HAROLD G       0.000000
+YEAP SOON                    NaN
+MURRAY JULIA H          0.005018
+GARLAND C KEVIN         0.047847
+DODSON KEITH            0.056818
+YEAGER F SCOTT               NaN
+HIRKO JOSEPH                 NaN
+DIETRICH JANET R        0.118585
+DERRICK JR. JAMES V     0.029344
+FREVERT MARK A          0.073893
+PAI LOU L                    NaN
+BAY FRANKLIN R               NaN
+HAYSLETT RODERICK J     0.013213
+FUGH JOHN L                  NaN
+FALLON JAMES B          0.023932
+KOENIG MARK E           0.022325
+SAVAGE FRANK                 NaN
+IZZO LAWRENCE L         0.056452
+TILNEY ELIZABETH A      0.021739
+MARTIN AMANDA K         0.005256
+BUY RICHARD B           0.044280
+GRAMM WENDY L                NaN
+CAUSEY RICHARD A        0.030655
+TAYLOR MITCHELL S       0.000000
+DONAHUE JR JEFFREY M    0.217341
+GLISAN JR BEN F         0.059565
+dtype: float64
+
+Pct emails to POI:
+ METTS MARK              0.034483
+BAXTER JOHN C                NaN
+ELLIOTT STEVEN               NaN
+CORDES WILLIAM R        0.000000
+HANNON KEVIN P          0.656250
+MORDAUNT KRISTINA M          NaN
+MEYER ROCKFORD G        0.000000
+MCMAHON JEFFREY         0.541667
+HORTON STANLEY C        0.013979
+PIPER GREGORY F         0.216216
+HUMPHREY GENE E         1.000000
+UMANOFF ADAM S          0.000000
+BLACHMAN JEREMY M       0.142857
+SUNDE MARTIN            0.342105
+GIBBS DANA R            0.000000
+LOWRY CHARLES P              NaN
+COLWELL WESLEY          0.275000
+MULLER MARK S           0.000000
+JACKSON CHARLENE R      0.339286
+WESTFAHL RICHARD K           NaN
+WALTERS GARETH W             NaN
+WALLS JR ROBERT H       0.000000
+KITCHEN LOUISE          0.112269
+CHAN RONNIE                  NaN
+BELFER ROBERT                NaN
+SHANKMAN JEFFREY A      0.030959
+WODRASKA JOHN                NaN
+BERGSIEKER RICHARD P    0.000000
+URQUHART JOHN A              NaN
+BIBI PHILIPPE A         0.200000
+                          ...   
+REYNOLDS LAWRENCE            NaN
+DIMICHELE RICHARD G          NaN
+BHATNAGAR SANJAY        0.034483
+CARTER REBECCA C        0.466667
+BUCHANAN HAROLD G       0.000000
+YEAP SOON                    NaN
+MURRAY JULIA H          0.044444
+GARLAND C KEVIN         0.613636
+DODSON KEITH            0.214286
+YEAGER F SCOTT               NaN
+HIRKO JOSEPH                 NaN
+DIETRICH JANET R        0.222222
+DERRICK JR. JAMES V     0.022002
+FREVERT MARK A          0.285714
+PAI LOU L                    NaN
+BAY FRANKLIN R               NaN
+HAYSLETT RODERICK J     0.035815
+FUGH JOHN L                  NaN
+FALLON JAMES B          0.493333
+KOENIG MARK E           0.245902
+SAVAGE FRANK                 NaN
+IZZO LAWRENCE L         0.263158
+TILNEY ELIZABETH A      0.578947
+MARTIN AMANDA K         0.000000
+BUY RICHARD B           0.067426
+GRAMM WENDY L                NaN
+CAUSEY RICHARD A        0.244898
+TAYLOR MITCHELL S       0.000000
+DONAHUE JR JEFFREY M    0.500000
+GLISAN JR BEN F         0.375000
+dtype: float64
+
