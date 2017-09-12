@@ -134,10 +134,6 @@ labels, features = targetFeatureSplit(data)
 ### Note that if you want to do PCA or other multi-stage operations,
 ### you'll need to use Pipelines. For more info:
 ### http://scikit-learn.org/stable/modules/pipeline.html
-#from sklearn.cross_validation import train_test_split
-#features_train, features_test, labels_train, labels_test = \
-#    train_test_split(features, labels, test_size=0.3, random_state=42)
-
 
 # *****************************************************************************
 # Set up to allow testing of models similar to the tester.py used by the grader
@@ -159,13 +155,13 @@ pca = PCA()
 
 #features_train_scaled = scaler.fit_transform(features_train)
 #features_test_scaled = scaler.transform(features_test)
-#selector.fit(features_train_scaled, labels_train)
-#is_selected = selector.get_support()
-#weights = selector.scores_
+selector.fit(features, labels)
+is_selected = selector.get_support()
+weights = selector.scores_
 
-#for i in range(0, len(weights)):
-#    if is_selected[i]:
-#        print(new_features_list[i + 1],':' , weights[i])
+for i in range(0, len(weights)):
+    if is_selected[i]:
+        print(new_features_list[i + 1],':' , weights[i])
 
 # pca
 #features_train_pca = pca.fit_transform(features_train_scaled)
@@ -192,7 +188,7 @@ clf_NB = GaussianNB()
 #        'select__k': range(1, len(new_features_list)),
 #        'reduce__n_components': [0.90, 0.925, 0.95, 0.975],
 #        'reduce__whiten': [False, True]
-        }
+#        }
 
 #clf_NB = GridSearchCV(pipe_NB, param_grid_NB, cv = cv, scoring = 'f1')
 #clf_NB.fit(features, labels)
@@ -224,7 +220,7 @@ clf_DT = tree.DecisionTreeClassifier()
 #param_grid_DT = {
 #        'select__k': range(1, len(new_features_list)),
 #        'classify__criterion': ['gini', 'entropy']
-        }
+#        }
 
 #clf_DT = GridSearchCV(pipe_DT, param_grid_DT, cv = cv, scoring = 'f1')
 #clf_DT.fit(features, labels)
@@ -285,8 +281,8 @@ pipe_KNN = Pipeline([
     ('classify', clf_KNN)])
 
 param_grid_KNN = {
-        'select__k': range(1, len(new_features_list)),
-        'classify__algorithm': ['ball_tree', 'kd_tree'],
+        'select__k': [6],
+        'classify__algorithm': ['ball_tree','kd_tree'],
         'classify__n_neighbors': range(2, 6),
         'classify__weights': ['uniform', 'distance']
         }
@@ -302,13 +298,6 @@ features_selected_scores = [x for x, y in
 print(features_selected_list)
 print(features_selected_scores)
 print(clf_KNN.best_params_)
-
-### Task 5: Tune your classifier to achieve better than .3 precision and recall 
-### using our testing script. Check the tester.py script in the final project
-### folder for details on the evaluation method, especially the test_classifier
-### function. Because of the small size of the dataset, the script uses
-### stratified shuffle split cross validation. For more info: 
-### http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 
 
 ### Task 6: Dump your classifier, dataset, and features_list so anyone can

@@ -43,31 +43,55 @@ outliers were identified by manually scanning the information provided in
 \textbf{enron61702insiderpay.pdf}
 
 After removing outliers, there are 144 total records in the data set and 18
-persons-of-interest.  There are a number of features that are mostly empty (e.g.
-loan advances, director fees, and restricted stock deferred), but give that we
+persons-of-interest.  There are 19 features provided in the data set and a
+number of features are mostly empty (e.g.
+loan advances, director fees, and restricted stock deferred), but given that we
 are using SelectKBest for our feature selection we do not preemptively remove
-these from the data.
-
-\section{Question 2}
-
-\textbf{Feature Selection}
-
-The features utilized in the final model are \textbf{bonus},
-\textbf{exercised\_stock\_options}, \textbf{salary}, \textbf{total\_stock\_value}
-and two engineered features \textbf{bonus\_salary\_gap} and \textbf{pct\_email\_poi}.
-Initially, I attempted to remove features by looking at pairwise correlations. 
-I was assuming that would
-allow me to see the strength of the relationship with the poi labels as well as
-provide an overview of which features were highly correlated and therefore unlikely
-to add additional value to the model.  While this approach was successful in
-getting the precision and recall above the required .30 it did not perform as
-well as using \textbf{SelectKBest}.
-
-Using SelectKBest for feature selection I obtained the following feature scores:
+these from the data.  The table below shows the top five features with the
+highest percentage of values that are NaN.
 
 \begin{center}
     \begin{tabular}{|| l c ||}
-        \hline & Score \\
+        \hline Feature & Pct NaN \\
+        \hline\hline
+        loan advances & 97.9167 \\
+        \hline
+        director fees & 88.8889 \\
+        \hline
+        restricted stock deferred & 88.1944 \\
+        \hline
+        deferral payments & 73.6111 \\
+        \hline
+        deferred income & 66.6667 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\section{Question 2}
+
+\textbf{Feature Selection} \\
+
+The features utilized in the final model are \textbf{bonus},
+\textbf{exercised\_stock\_options}, \textbf{salary}, \textbf{total\_stock\_value}
+and two engineered features \textbf{bonus\_salary\_gap} and
+\textbf{pct\_email\_poi}. Initially, I attempted to remove features by looking
+at pairwise correlations.  I was assuming that would allow me to see the
+strength of the relationship with the poi labels as well as provide an overview
+of which features were highly correlated and therefore unlikely to add
+additional value to the model.  While this approach was successful in
+getting the precision and recall above the required .30 it did not perform as
+well as using \textbf{SelectKBest}.
+
+I ran SelectKBest across the range of possible values of k (i.e. 1-21) in the
+context of GridSearchCV.  The resulting value of k was six.  It is clear from the
+table and charts below that these six features have the highest scores and are also
+associated with the highest level of precision and recall.
+
+The feature scores are as follows: \\
+
+\begin{center}
+    \begin{tabular}{|| l c ||}
+        \hline Feature & Score \\
         \hline\hline
         bonus & 20.79225 \\
         \hline
@@ -84,7 +108,19 @@ Using SelectKBest for feature selection I obtained the following feature scores:
     \end{tabular}
 \end{center}
 
-\textbf{Engineered Features}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=.6]{feature_scores.png}
+    \caption{SelectKBest Feature Scores}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=.6]{precision_recall.png}
+    \caption{Precision and Recall}
+\end{figure}
+
+\textbf{Engineered Features} \\
 
 Two engineered features were used in the final model.  The first, the percentage
 of a persons email sent to a person of interest, was discussed in the course
@@ -97,9 +133,9 @@ salary and this could provide additional information.  Perhaps there were lower
 ranking employees whose silence was paid for with a large bonus.  Initially, I
 constructed this feature as the bonus to salary ratio, but I switched to the
 nominal difference between bonus and salary as it improved the K-nearest
-neighbor result.
+neighbor result. \\
 
-\textbf{Scaling}
+\textbf{Scaling} \\
 
 I did use scaling (StandardScalar) when testing each algorithm, but particularly
 in the case of the final KNN model it lowered the precision and recall
@@ -114,10 +150,10 @@ precision and recall were without making any transformations on the data or
 adding additional features.  I then tested SVM and KNN algorithms in the same
 manner.  Below is a summary of the base algorithms that were tested.
 
-\textbf{Summary of Base Models}
+\textbf{Summary of Base Models} \\
 \begin{center}
     \begin{tabular}{|| l c c c||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .22604 & .39500 & .28753 \\
         \hline
@@ -131,12 +167,12 @@ manner.  Below is a summary of the base algorithms that were tested.
 \end{center}
 
 After establishing baselines for each of the models, I transformed the data
-using StandardScaler.
+using StandardScaler. \\
 
-\textbf{Summary of Base Models with Scaling}
+\textbf{Summary of Base Models with Scaling} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .15473 & .82400 & .26053 \\
         \hline
@@ -156,12 +192,12 @@ same scale (i.e dollars).
 Next, I added in the first engineered feature, pct\_email\_to\_poi, which was discussed in the course
 materials.  These models were again run with and without scaling though now that
 we have introduced a feature which only ranges from 0 to 1 I would expect
-feature scaling to be needed.
+feature scaling to be needed. \\
 
-\textbf{Summary of Models with pct\_email\_to\_poi Feature}
+\textbf{Summary of Models with pct\_email\_to\_poi Feature} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .22604 & .39500 & .28753 \\
         \hline
@@ -175,12 +211,12 @@ feature scaling to be needed.
 \end{center}
 
 After adding this feature we now have a viable model in the Decision Tree.
-Let's again check the impact of scaling the features.
+Let's again check the impact of scaling the features. \\
 
-\textbf{Summary of Models with pct\_email\_to\_poi Feature with Scaling}
+\textbf{Summary of Models with pct\_email\_to\_poi Feature with Scaling} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .15866 & .82700 & .26624 \\
         \hline
@@ -203,12 +239,13 @@ meeting the precision and recall hurdles.  The feature I engineered is the
 bonus\_salary\_gap, which measure the difference between the nominal amount of
 bonus and a persons salary.  As mentioned above, my intuition was that perhaps
 persons with bonuses out of line with their salary may have been paid to be
-quiet about what was going on in the company.
+quiet about what was going on in the company. \\
 
-\textbf{Summary of Models with pct\_email\_to\_poi and bonus\_salary\_gap Features}
+\textbf{Summary of Models with pct\_email\_to\_poi and bonus\_salary\_gap
+Features} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .23239 & .38100 & .28869 \\
         \hline
@@ -222,13 +259,13 @@ quiet about what was going on in the company.
 \end{center}
 
 The new feature seems to provide minimal to no impact on the models, but I will
-leave it in for the next step when I apply feature selection.
+leave it in for the next step when I apply feature selection. \\
 
 \textbf{Summary of Models with pct\_email\_to\_poi and bonus\_salary\_gap Features
-and Feature Selection}
+and Feature Selection} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .40669 & .34650 & .37419 \\
         \hline
@@ -246,13 +283,13 @@ with precision just short of .80 seems the most appealing given that recall is
 similar for all three algorithms (SVM doesn't work without scaling).  It is
 worth noting that our two engineered features are among those being selected by
 SelectKBest.  For good measure, lets run these four algorithms with scaling and
-see if we get the same knock to performance.
+see if we get the same knock to performance. \\
 
 \textbf{Summary of Models with pct\_email\_to\_poi and bonus\_salary\_gap Features,
-Feature Selection and Scaling}
+Feature Selection and Scaling} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         Naive Bayes & .30312 & .37450 & .33505 \\
         \hline
@@ -274,15 +311,26 @@ this model and use it as our final.
 
 Many of the algorithms available to us have parameters that can be changed.
 In the case of k-nearest neighbors this could be the number of neighbors to
-create or the algorithm used for computing the nearest neighbors.  This is an
-important part of the validation process as it relates to the bias / variance
-trade-off or the trade-off between how accurately our model predicts the
-training data versus how well it generalizes to data it has not seen yet.
+create or the algorithm used for computing the nearest neighbors.  The process
+of testing the model across various ranges of these parameters is called tuning
+and it is an important part of building a model. In particular, it is a way of 
+addressing the bias / variance trade-off. In other words, the trade-off between
+how accurately our model predicts the
+training data versus how well it generalizes to data it has not yet seen.  A
+model whose parameters are not tuned may perform very well on training data, but
+perform very poorly on test data (i.e. it is over-fit to the training data).
 
 I used GridSearchCV to tune the parameters of the KNN algorithm.  The parameters
 that were tuned were \textbf{algorithm, n\_neighbors, and weights}.
   
 \section{Question 5}
+Validation is the process of building a model based on training data and then
+testing it on data it has not yet seen. This is done by splitting the
+data into training and testing sets.  The model will be trained on only the
+training data and then evaluated based on the testing data.  It is important
+to withhold a portion of the data during training in order to avoid over fitting
+the model.
+
 Given the small number of pois in the data (i.e. imbalanced data set) I used the
 StratifiedShuffleSplit as the cross validation approach within GridSearchCV to
 validate the model.  Rather than creating one training / test split the
@@ -293,10 +341,10 @@ data.
 
 \section{Question 6}
 
-\textbf{Summary of Final Model}
+\textbf{Summary of Final Model} \\
 \begin{center}
     \begin{tabular}{|| l c c c ||}
-        \hline & Precision & Recall & F1 \\
+        \hline Algorithm & Precision & Recall & F1 \\
         \hline\hline
         KNN & .75297 & .41150 & .53217  \\
         \hline
